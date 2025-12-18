@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Design files (please do not remove 🙂)
+*.sketch
+*.fig
+*.xd
