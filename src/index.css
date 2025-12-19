@@ -89,6 +89,13 @@ li > button {
   align-items: center;
 }
 
+li>img {
+  justify-self: end;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 form {
   display: flex;
   gap: 1rem;
@@ -100,7 +107,7 @@ form>input {
   font-size: 1rem;
   transition: ease-in-out 0.2s;
   border-radius: 10px;
-  border: none;
+  border: 1px solid;
 }
 form> input:focus {
   box-shadow: rgba(255, 255, 255, 0.199) 0px 0px 10px 10px;
@@ -109,5 +116,11 @@ form> input:focus {
 form>button {
   width: 4rem;
   font-size: 1rem;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 1rem;
+  height: 1rem;
   cursor: pointer;
 }
