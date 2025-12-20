@@ -100,7 +100,7 @@ function Form({onAddItem}) {
       alert("do not blank")
       return;
     }
-    const newItem = {name, checked:false, id:Date.now()}
+    const newItem = {id:Date.now(), name, checked:false }
     onAddItem(newItem);
     setName("");
   }

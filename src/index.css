@@ -90,7 +90,7 @@ p {
 ul {
   width: 100%;
   height: fit-content;
-  max-height: 25rem;
+  max-height: 20.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -172,7 +172,7 @@ form>button {
   cursor: pointer;
 }
 
-@media screen and (max-width:40rem) {
+@media screen and (max-width:600px) {
   :root {
   --bs-body-bg: hsl(0, 0%, 98%);
   --bs-box-bg: hsl(0, 0%, 98%);
@@ -191,6 +191,13 @@ form>button {
 
   main {
     width: 90%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width:900px) {
+  main {
+    width: 50%;
     max-width: 100%;
   }
 }
