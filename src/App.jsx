@@ -7,7 +7,12 @@ const shoppingItem= [
     id:1,
     name:"Pushup 100 times",
     checked:false
-  }
+  },
+  {
+    id:2,
+    name:"Debugging 12 hours",
+    checked:false
+  },
 ]
 
 
@@ -29,6 +34,10 @@ const shoppingItem= [
         : shoppingItem
       )
     ));
+  }
+
+  function handleClearItem() {
+    setItems([]);
   }
 
   //toggle theme
@@ -64,7 +73,7 @@ const shoppingItem= [
     <main>
       <Header toggleTheme={toggleTheme}/>
       <Form onAddItem={handleAddItem}/>
-      <List items={items} onDeleteItem={handleDeleteItem} handleToggleItem={handleToggleItem}/>
+      <List items={items} onDeleteItem={handleDeleteItem} handleToggleItem={handleToggleItem} handleClearItem={handleClearItem}/>
     </main>
   )
 
@@ -101,14 +110,16 @@ function Form({onAddItem}) {
 }
 
 
-function List({items, onDeleteItem, handleToggleItem}) {
+function List({items, onDeleteItem, handleToggleItem, handleClearItem}) {
   return (
     <div className='list'>
       <ul>
         {items.map((item) => (
           <Item item={item} key={item.id} onDeleteItem={onDeleteItem} handleToggleItem={handleToggleItem}/>
         ))}
+        <Control items={items} handleClearItem={handleClearItem}/>
       </ul>
+      
     </div>
   )
 }
@@ -122,6 +133,15 @@ function Item({item, onDeleteItem, handleToggleItem}) {
         <p>{item.name}</p>
       </span>
       <img src="/images/icon-cross.svg" alt="close icon" onClick={() => onDeleteItem(item.id)}/>
+    </li>
+  )
+}
+
+function Control({items, handleClearItem}) {
+  return(
+    <li>
+      <p>{items.length} item left</p>
+      <p onClick={handleClearItem}>Clear items</p>
     </li>
   )
 }

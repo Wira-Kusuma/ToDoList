@@ -13,6 +13,7 @@
   --bs-body-bg: hsl(0, 0%, 98%);
   --bs-box-bg: hsl(0, 0%, 98%);
   --text: hsl(235, 19%, 35%);
+  --text-btm:hsl(236, 9%, 61%);
   --shadow:0 0 40px 0.5px rgba(0, 0, 0, 0.200);
   --bg-img: url(/images/bg-desktop-light.jpg);
 }
@@ -21,6 +22,7 @@
     --bs-body-bg: hsl(235, 21%, 11%);
     --bs-box-bg: hsl(235, 24%, 19%);
     --text:hsl(234, 39%, 85%);
+    --text-btm:hsl(235, 16%, 43%);
     --shadow: ;
     --bg-img: url(/images/bg-desktop-dark.jpg);
 }
@@ -99,6 +101,12 @@ ul>li:first-child{
 ul>li:last-child{
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  padding: 0.8rem;
+}
+ul>li:last-child>p{
+  font-size: 0.9rem;
+  color: var(--text-btm);
+  cursor: pointer;
 }
 
 li {
