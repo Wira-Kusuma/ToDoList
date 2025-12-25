@@ -36,7 +36,7 @@ body {
   background-repeat: no-repeat;
   background-size:contain;
   background-position: top;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   overflow: hidden;
 }
 
@@ -150,7 +150,6 @@ form>input {
   padding: 1rem;
   width: 100%;
   font-size: 1rem;
-  transition: ease-in-out 0.3s;
   border-radius: 10px;
   border: unset;
   background-color: var(--bs-box-bg);
@@ -191,13 +190,6 @@ form>button {
 
   main {
     width: 90%;
-    max-width: 100%;
-  }
-}
-
-@media screen and (max-width:900px) {
-  main {
-    width: 50%;
     max-width: 100%;
   }
 }
