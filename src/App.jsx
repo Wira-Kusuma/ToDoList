@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './index.css'
+import { Header, Form, List } from './components/component';
 
 
 const shoppingItem= [
@@ -13,7 +14,6 @@ const shoppingItem= [
     name:"Debugging 12 hours",
     checked:false
   },
-<<<<<<< HEAD
   {
     id: 3,
     name: "buy iphone 17",
@@ -25,9 +25,6 @@ const shoppingItem= [
     checked: true,
   },
 ];
-=======
-]
->>>>>>> parent of 2dc1dc5 (creating module in component)
 
 
  export default function App() {
@@ -84,123 +81,18 @@ const shoppingItem= [
     // Balik nilai isDarkMode (true jadi false, false jadi true)
     setIsDarkMode(!isDarkMode);
   };
-<<<<<<< HEAD
-
-  // filtering
-  const [filter, setFilter] = useState("all"); // "all" | "active" | "completed"
-
-
-  function filterActive(){
-    setFilter("active");
-    items(filteredItems);
-  }
-
-  function showAll(){
-    setFilter("all");
-    items(filteredItems);
-  }
-
-  function filterComplete(){
-    setFilter("completed");
-    items(filteredItems);
-  }
-
-  const filteredItems = items.filter(item => {
-    if (filter === "all") return true;
-    if (filter === "active") return item.checked === false;
-    if (filter === "completed") return item.checked === true;
-    return true;
-  });
-
-  return (
-    <main>
-      <Header toggleTheme={toggleTheme} />
-      <Form onAddItem={handleAddItem} />
-      <List
-        items={filteredItems}
-        onDeleteItem={handleDeleteItem}
-        handleToggleItem={handleToggleItem}
-        handleClearItem={handleClearItem}
-        filterActive={filterActive}
-        showAll={showAll}
-        filterComplete={filterComplete}
-      />
-=======
   
   return(
     <main>
       <Header toggleTheme={toggleTheme}/>
       <Form onAddItem={handleAddItem}/>
-      <List items={items} onDeleteItem={handleDeleteItem} handleToggleItem={handleToggleItem} handleClearItem={handleClearItem}/>
->>>>>>> parent of 2dc1dc5 (creating module in component)
+      <List 
+      items={items} 
+      onDeleteItem={handleDeleteItem} 
+      handleToggleItem={handleToggleItem} handleClearItem={handleClearItem}
+      />
     </main>
   )
 
 }
 
-function Header({toggleTheme}) {
-  return (
-  <header>
-    <h1>To Do</h1>
-    <img src="images/icon-moon.svg" alt="moon icon dark mode" onClick={toggleTheme} id='moon'/>
-    <img src="images/icon-sun.svg" alt="moon icon dark mode" onClick={toggleTheme} id='sun'/>
-  </header>
-)
-}
-
-function Form({onAddItem}) {
-  const [name, setName]  = useState("");
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    if(!name) {
-      alert("do not blank")
-      return;
-    }
-    const newItem = {id:Date.now(), name, checked:false }
-    onAddItem(newItem);
-    setName("");
-  }
-  return(
-    <form className='add' onSubmit={handleSubmit}>
-      <input type="text" placeholder='add new item' value={name} onChange={(e) => setName(e.target.value)}/>
-    </form>
-  )
-}
-
-
-function List({items, onDeleteItem, handleToggleItem, handleClearItem}) {
-  return (
-    <div className='list'>
-      <ul>
-        {items.map((item) => (
-          <Item item={item} key={item.id} onDeleteItem={onDeleteItem} handleToggleItem={handleToggleItem}/>
-        ))}
-        <Control items={items} handleClearItem={handleClearItem}/>
-      </ul>
-      
-    </div>
-  )
-}
-
-function Item({item, onDeleteItem, handleToggleItem}) {
-  
-  return(
-    <li key={item.id}>
-      <input type="checkbox" checked={item.checked} onChange={() => handleToggleItem(item.id)} className='checkbox'/>
-      <span style={item.checked ? {textDecoration:"line-through"} : {} }>
-        <p>{item.name}</p>
-      </span>
-      <img src="/images/icon-cross.svg" alt="close icon" onClick={() => onDeleteItem(item.id)}/>
-    </li>
-  )
-}
-
-function Control({items, handleClearItem}) {
-  return(
-    <li>
-      <p>{items.length} item left</p>
-      <p onClick={handleClearItem}>Clear items</p>
-    </li>
-  )
-}
