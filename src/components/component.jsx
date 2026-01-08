@@ -105,7 +105,11 @@ export function Item({
   );
 }
 
-export function Control({ items, handleClearItem,setFilter  }) {
+export function Control({ 
+    items, 
+    handleClearItem,
+    setFilter,  
+}) {
   return (
     <li>
       <p>{items.length} item left</p>
