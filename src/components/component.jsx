@@ -50,6 +50,7 @@ export function List({
   onDeleteItem,
   handleToggleItem,
   handleClearItem,
+  setFilter
 }) {
   return (
     <div className="list">
@@ -62,7 +63,11 @@ export function List({
             handleToggleItem={handleToggleItem}
           />
         ))}
-        <Control items={items} handleClearItem={handleClearItem} />
+        <Control 
+        items={items} 
+        handleClearItem={handleClearItem}
+        setFilter={setFilter}
+         />
       </ul>
     </div>
   );
@@ -100,10 +105,13 @@ export function Item({
   );
 }
 
-export function Control({ items, handleClearItem }) {
+export function Control({ items, handleClearItem,setFilter  }) {
   return (
     <li>
       <p>{items.length} item left</p>
+      <p onClick={()=>setFilter("all")}>All</p>
+      <p onClick={()=>setFilter("active")}>Active</p>
+      <p onClick={()=>setFilter("completed")}>Completed</p>
       <p onClick={handleClearItem}>Clear items</p>
     </li>
   );

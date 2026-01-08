@@ -81,15 +81,27 @@ const shoppingItem= [
     // Balik nilai isDarkMode (true jadi false, false jadi true)
     setIsDarkMode(!isDarkMode);
   };
+
+  // filter
+
+  const [filter, setFilter] = useState("all")
+
+  const filteredItems = items.filter(item => {
+    if (filter === "all") return true;
+    if (filter === "active") return item.checked === false;
+    if (filter === "completed") return item.checked === true;
+    return true;
+  });
   
   return(
     <main>
       <Header toggleTheme={toggleTheme}/>
       <Form onAddItem={handleAddItem}/>
       <List 
-      items={items} 
+      items={filteredItems} 
       onDeleteItem={handleDeleteItem} 
       handleToggleItem={handleToggleItem} handleClearItem={handleClearItem}
+      setFilter={setFilter}
       />
     </main>
   )

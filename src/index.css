@@ -195,4 +195,8 @@ form>button {
     width: 90%;
     max-width: 100%;
   }
+
+  li>img{
+    opacity: 1 !important;
+  }
 }
