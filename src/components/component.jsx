@@ -67,7 +67,7 @@ export function List({
         items={items} 
         handleClearItem={handleClearItem}
         setFilter={setFilter}
-         />
+        />
       </ul>
     </div>
   );
