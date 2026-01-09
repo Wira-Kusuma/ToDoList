@@ -156,9 +156,10 @@ form>input {
   border-radius: 10px;
   border: unset;
   background-color: var(--bs-box-bg);
+  transition: ease-in-out 0.2s;
+  box-shadow: var(--shadow);
 }
 form> input:focus {
-  box-shadow: var(--shadow);
   outline: none;
 }
 
@@ -198,5 +199,12 @@ form>button {
 
   li>img{
     opacity: 1 !important;
+  }
+}
+
+@media screen and (max-width:1100px){
+  main {
+    width: 50%;
+    max-width: 100%;
   }
 }

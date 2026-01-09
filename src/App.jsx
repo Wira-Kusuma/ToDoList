@@ -96,7 +96,9 @@ const shoppingItem= [
   return(
     <main>
       <Header toggleTheme={toggleTheme}/>
-      <Form onAddItem={handleAddItem}/>
+      <Form 
+      onAddItem={handleAddItem}
+      />
       <List 
       items={filteredItems} 
       onDeleteItem={handleDeleteItem} 

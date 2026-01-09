@@ -32,6 +32,7 @@ export function Form({ onAddItem }) {
     const newItem = { id: Date.now(), name, checked: false };
     onAddItem(newItem);
     setName("");
+    
   }
   return (
     <form className="add" onSubmit={handleSubmit}>
