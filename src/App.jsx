@@ -78,9 +78,9 @@ const shoppingItem= [
   }, [isDarkMode]); 
 
   const toggleTheme = () => {
-    // Balik nilai isDarkMode (true jadi false, false jadi true)
     setIsDarkMode(!isDarkMode);
   };
+
 
   // filter
 
@@ -95,7 +95,9 @@ const shoppingItem= [
   
   return(
     <main>
-      <Header toggleTheme={toggleTheme}/>
+      <Header 
+      toggleTheme={toggleTheme}
+      />
       <Form 
       onAddItem={handleAddItem}
       />
